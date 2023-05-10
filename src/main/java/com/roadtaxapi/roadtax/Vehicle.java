@@ -5,8 +5,7 @@ import java.util.Date;
 import java.util.Set;
 
 @Entity
-@Table(name = "vehicles")
-public class Vehicle {
+public class Vehicle implements java.io.Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

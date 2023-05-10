@@ -3,8 +3,7 @@ package com.roadtaxapi.roadtax;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "vehicle_category_relations")
-public class VehicleCategoryRelation {
+public class VehicleCategoryRelation implements java.io.Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
