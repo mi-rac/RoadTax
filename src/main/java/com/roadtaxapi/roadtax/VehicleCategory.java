@@ -19,6 +19,9 @@ public class VehicleCategory {
     @OneToMany(mappedBy = "vehicleCategory", cascade = CascadeType.ALL)
     private Set<RoadTaxRate> roadTaxRates;
 
+    public VehicleCategory() {
+    }
+
     public Long getCategory_id() {
         return category_id;
     }

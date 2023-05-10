@@ -18,6 +18,9 @@ public class VehicleCategoryRelation {
     @JoinColumn(name = "category_id")
     private VehicleCategory vehicleCategory;
 
+    public VehicleCategoryRelation() {
+    }
+
     public Long getId() {
         return id;
     }

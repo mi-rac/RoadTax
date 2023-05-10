@@ -23,6 +23,9 @@ public class RoadTaxRate {
     @Temporal(TemporalType.DATE)
     private Date effective_to;
 
+    public RoadTaxRate() {
+    }
+
     public Long getRate_id() {
         return rate_id;
     }

@@ -22,6 +22,9 @@ public class Owner {
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "owner", cascade = CascadeType.ALL)
     private Set<Vehicle> vehicles;
 
+    public Owner() {
+    }
+
     public Long getOwner_id() {
         return owner_id;
     }

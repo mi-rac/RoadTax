@@ -28,8 +28,11 @@ public class Vehicle {
     @OneToMany(mappedBy = "vehicle", cascade = CascadeType.ALL)
     private Set<VehicleCategoryRelation> vehicleCategoryRelations;
 
-    @OneToMany(mappedBy = "vehicle", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "taxPayment", cascade = CascadeType.ALL)
     private Set<TaxPayment> taxPayments;
+
+    public Vehicle() {
+    }
 
     public Long getVehicle_id() {
         return vehicle_id;

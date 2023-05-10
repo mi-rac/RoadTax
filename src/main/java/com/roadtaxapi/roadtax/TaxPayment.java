@@ -25,6 +25,9 @@ public class TaxPayment {
     private Double payment_amount;
     private String payment_status;
 
+    public TaxPayment() {
+    }
+
     public Long getPayment_id() {
         return payment_id;
     }
