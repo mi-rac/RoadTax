@@ -94,7 +94,7 @@
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>3.1.0</version>
                 <configuration>
-                    <mainClass>com.roadtaxapi.roadtax.RoadTaxApplication</mainClass>
+                    <mainClass>com.roadtax.RoadTaxApplication</mainClass>
                 </configuration>
             </plugin>
         </plugins>

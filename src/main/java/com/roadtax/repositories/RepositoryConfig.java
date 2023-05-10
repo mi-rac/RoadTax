@@ -1,6 +1,7 @@
-package com.roadtaxapi.roadtax.repositories;
+package com.roadtax.repositories;
 
-import com.roadtaxapi.roadtax.entities.*;
+import com.roadtax.entities.*;
+import com.roadtax.entities.*;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
@@ -8,7 +9,7 @@ import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 
 @Configuration
-@EnableJpaRepositories(basePackages = "com.roadtaxapi.roadtax")
+@EnableJpaRepositories(basePackages = "com.roadtax")
 public class RepositoryConfig implements RepositoryRestConfigurer
 {
     @Override

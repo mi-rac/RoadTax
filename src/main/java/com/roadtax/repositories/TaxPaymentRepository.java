@@ -1,6 +1,6 @@
-package com.roadtaxapi.roadtax.repositories;
+package com.roadtax.repositories;
 
-import com.roadtaxapi.roadtax.entities.TaxPayment;
+import com.roadtax.entities.TaxPayment;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 

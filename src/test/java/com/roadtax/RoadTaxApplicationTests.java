@@ -1,4 +1,4 @@
-package com.roadtaxapi.roadtax;
+package com.roadtax;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
