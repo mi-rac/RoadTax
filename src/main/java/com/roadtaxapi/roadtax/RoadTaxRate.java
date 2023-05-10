@@ -8,29 +8,29 @@ public class RoadTaxRate implements java.io.Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long rate_id;
+    private Long rateId;
 
     @ManyToOne
     @JoinColumn(name = "category_id")
     private VehicleCategory vehicleCategory;
 
-    private Double tax_rate;
+    private Double taxRate;
 
     @Temporal(TemporalType.DATE)
-    private Date effective_from;
+    private Date effectiveFrom;
 
     @Temporal(TemporalType.DATE)
-    private Date effective_to;
+    private Date effectiveTo;
 
     public RoadTaxRate() {
     }
 
-    public Long getRate_id() {
-        return rate_id;
+    public Long getRateId() {
+        return rateId;
     }
 
-    public void setRate_id(Long rate_id) {
-        this.rate_id = rate_id;
+    public void setRateId(Long rateId) {
+        this.rateId = rateId;
     }
 
     public VehicleCategory getVehicleCategory() {
@@ -41,28 +41,28 @@ public class RoadTaxRate implements java.io.Serializable{
         this.vehicleCategory = vehicleCategory;
     }
 
-    public Double getTax_rate() {
-        return tax_rate;
+    public Double getTaxRate() {
+        return taxRate;
     }
 
-    public void setTax_rate(Double tax_rate) {
-        this.tax_rate = tax_rate;
+    public void setTaxRate(Double taxRate) {
+        this.taxRate = taxRate;
     }
 
-    public Date getEffective_from() {
-        return effective_from;
+    public Date getEffectiveFrom() {
+        return effectiveFrom;
     }
 
-    public void setEffective_from(Date effective_from) {
-        this.effective_from = effective_from;
+    public void setEffectiveFrom(Date effectiveFrom) {
+        this.effectiveFrom = effectiveFrom;
     }
 
-    public Date getEffective_to() {
-        return effective_to;
+    public Date getEffectiveTo() {
+        return effectiveTo;
     }
 
-    public void setEffective_to(Date effective_to) {
-        this.effective_to = effective_to;
+    public void setEffectiveTo(Date effectiveTo) {
+        this.effectiveTo = effectiveTo;
     }
 }
 

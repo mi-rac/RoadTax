@@ -8,31 +8,31 @@ public class TaxPayment implements java.io.Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long payment_id;
+    private Long paymentId;
 
     @ManyToOne
-    @JoinColumn(name = "vehicle_id")
+    @JoinColumn(name = "vehicleId")
     private Vehicle vehicle;
 
     @ManyToOne
-    @JoinColumn(name = "rate_id")
+    @JoinColumn(name = "rateId")
     private RoadTaxRate roadTaxRate;
 
     @Temporal(TemporalType.DATE)
-    private Date payment_date;
+    private Date paymentDate;
 
-    private Double payment_amount;
-    private String payment_status;
+    private Double paymentAmount;
+    private String paymentStatus;
 
     public TaxPayment() {
     }
 
-    public Long getPayment_id() {
-        return payment_id;
+    public Long getPaymentId() {
+        return paymentId;
     }
 
-    public void setPayment_id(Long payment_id) {
-        this.payment_id = payment_id;
+    public void setPaymentId(Long paymentId) {
+        this.paymentId = paymentId;
     }
 
     public Vehicle getVehicle() {
@@ -51,27 +51,27 @@ public class TaxPayment implements java.io.Serializable{
         this.roadTaxRate = roadTaxRate;
     }
 
-    public Date getPayment_date() {
-        return payment_date;
+    public Date getPaymentDate() {
+        return paymentDate;
     }
 
-    public void setPayment_date(Date payment_date) {
-        this.payment_date = payment_date;
+    public void setPaymentDate(Date paymentDate) {
+        this.paymentDate = paymentDate;
     }
 
-    public Double getPayment_amount() {
-        return payment_amount;
+    public Double getPaymentAmount() {
+        return paymentAmount;
     }
 
-    public void setPayment_amount(Double payment_amount) {
-        this.payment_amount = payment_amount;
+    public void setPaymentAmount(Double paymentAmount) {
+        this.paymentAmount = paymentAmount;
     }
 
-    public String getPayment_status() {
-        return payment_status;
+    public String getPaymentStatus() {
+        return paymentStatus;
     }
 
-    public void setPayment_status(String payment_status) {
-        this.payment_status = payment_status;
+    public void setPaymentStatus(String paymentStatus) {
+        this.paymentStatus = paymentStatus;
     }
 }

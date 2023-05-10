@@ -9,36 +9,36 @@ public class Vehicle implements java.io.Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long vehicle_id;
+    private Long vehicleId;
 
     @ManyToOne
-    @JoinColumn(name = "owner_id")
+    @JoinColumn(name = "ownerId")
     private Owner owner;
 
     private String make;
     private String model;
     private Integer year;
-    private String license_plate;
-    private String vin_number;
+    private String licensePlate;
+    private String vinNumber;
 
     @Temporal(TemporalType.DATE)
-    private Date registration_date;
+    private Date registrationDate;
 
     @OneToMany(mappedBy = "vehicle", cascade = CascadeType.ALL)
     private Set<VehicleCategoryRelation> vehicleCategoryRelations;
 
-    @OneToMany(mappedBy = "taxPayment", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "vehicle", cascade = CascadeType.ALL)
     private Set<TaxPayment> taxPayments;
 
     public Vehicle() {
     }
 
-    public Long getVehicle_id() {
-        return vehicle_id;
+    public Long getVehicleId() {
+        return vehicleId;
     }
 
-    public void setVehicle_id(Long vehicle_id) {
-        this.vehicle_id = vehicle_id;
+    public void setVehicleId(Long vehicleId) {
+        this.vehicleId = vehicleId;
     }
 
     public Owner getOwner() {
@@ -73,28 +73,28 @@ public class Vehicle implements java.io.Serializable{
         this.year = year;
     }
 
-    public String getLicense_plate() {
-        return license_plate;
+    public String getLicensePlate() {
+        return licensePlate;
     }
 
-    public void setLicense_plate(String license_plate) {
-        this.license_plate = license_plate;
+    public void setLicensePlate(String licensePlate) {
+        this.licensePlate = licensePlate;
     }
 
-    public String getVin_number() {
-        return vin_number;
+    public String getVinNumber() {
+        return vinNumber;
     }
 
-    public void setVin_number(String vin_number) {
-        this.vin_number = vin_number;
+    public void setVinNumber(String vinNumber) {
+        this.vinNumber = vinNumber;
     }
 
-    public Date getRegistration_date() {
-        return registration_date;
+    public Date getRegistrationDate() {
+        return registrationDate;
     }
 
-    public void setRegistration_date(Date registration_date) {
-        this.registration_date = registration_date;
+    public void setRegistrationDate(Date registrationDate) {
+        this.registrationDate = registrationDate;
     }
 
     public Set<VehicleCategoryRelation> getVehicleCategoryRelations() {
