@@ -1,4 +1,7 @@
-package com.roadtaxapi.roadtax;
+package com.roadtaxapi.roadtax.entities;
+
+import com.roadtaxapi.roadtax.entities.Vehicle;
+import com.roadtaxapi.roadtax.entities.VehicleCategory;
 
 import javax.persistence.*;
 

@@ -1,4 +1,4 @@
-package com.roadtaxapi.roadtax;
+package com.roadtaxapi.roadtax.entities;
 
 import javax.persistence.*;
 import java.util.Date;

@@ -1,5 +1,6 @@
-package com.roadtaxapi.roadtax;
+package com.roadtaxapi.roadtax.repositories;
 
+import com.roadtaxapi.roadtax.entities.*;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
