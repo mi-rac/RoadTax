@@ -11,11 +11,11 @@ public class TaxPayment implements java.io.Serializable{
     private Long paymentId;
 
     @ManyToOne
-    @JoinColumn(name = "vehicleId")
+    @JoinColumn(name = "vehicle_id")
     private Vehicle vehicle;
 
     @ManyToOne
-    @JoinColumn(name = "rateId")
+    @JoinColumn(name = "rate_id")
     private RoadTaxRate roadTaxRate;
 
     @Temporal(TemporalType.DATE)

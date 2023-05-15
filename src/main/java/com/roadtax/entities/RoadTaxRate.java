@@ -16,11 +16,10 @@ public class RoadTaxRate implements java.io.Serializable{
 
     private Double taxRate;
 
-    @Temporal(TemporalType.DATE)
-    private Date effectiveFrom;
+    private String description;
 
     @Temporal(TemporalType.DATE)
-    private Date effectiveTo;
+    private Date effectiveFrom;
 
     public RoadTaxRate() {
     }
@@ -57,12 +56,12 @@ public class RoadTaxRate implements java.io.Serializable{
         this.effectiveFrom = effectiveFrom;
     }
 
-    public Date getEffectiveTo() {
-        return effectiveTo;
+    public String getDescription() {
+        return description;
     }
 
-    public void setEffectiveTo(Date effectiveTo) {
-        this.effectiveTo = effectiveTo;
+    public void setDescription(String description) {
+        this.description = description;
     }
 }
 

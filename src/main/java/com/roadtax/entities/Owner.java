@@ -1,7 +1,7 @@
 package com.roadtax.entities;
 
 import javax.persistence.*;
-import java.util.Set;
+import java.util.List;
 
 @Entity
 public class Owner implements java.io.Serializable{
@@ -19,7 +19,7 @@ public class Owner implements java.io.Serializable{
     private String email;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "owner", cascade = CascadeType.ALL)
-    private Set<Vehicle> vehicles;
+    private List<Vehicle> vehicles;
 
     public Owner() {
     }
@@ -96,11 +96,11 @@ public class Owner implements java.io.Serializable{
         this.email = email;
     }
 
-    public Set<Vehicle> getVehicles() {
+    public List<Vehicle> getVehicles() {
         return vehicles;
     }
 
-    public void setVehicles(Set<Vehicle> vehicles) {
+    public void setVehicles(List<Vehicle> vehicles) {
         this.vehicles = vehicles;
     }
 }

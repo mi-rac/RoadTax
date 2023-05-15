@@ -10,11 +10,11 @@ public class VehicleCategoryRelation implements java.io.Serializable{
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "vehicleId")
+    @JoinColumn(name = "vehicle_id")
     private Vehicle vehicle;
 
     @ManyToOne
-    @JoinColumn(name = "categoryId")
+    @JoinColumn(name = "category_id")
     private VehicleCategory vehicleCategory;
 
     public VehicleCategoryRelation() {

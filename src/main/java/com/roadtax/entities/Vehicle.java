@@ -14,7 +14,6 @@ public class Vehicle implements java.io.Serializable{
     @ManyToOne
     @JoinColumn(name = "ownerId")
     private Owner owner;
-
     private String make;
     private String model;
     private Integer year;
