@@ -1,7 +1,5 @@
 package com.roadtax.entities;
 
-import com.roadtax.entities.TaxPayment;
-
 import java.util.List;
 
 public class VehicleTaxPaymentDTO {

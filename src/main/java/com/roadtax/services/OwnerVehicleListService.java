@@ -7,10 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Collectors;
-
 
 @Service
 public class OwnerVehicleListService
@@ -28,6 +26,7 @@ public class OwnerVehicleListService
         ownerVehicle.setOwnerId(owner.getOwnerId());
         ownerVehicle.setFirstName(owner.getFirstName());
         ownerVehicle.setLastName(owner.getLastName());
+        ownerVehicle.setEmail(owner.getEmail());
         ownerVehicle.setVehicles(vehicleShortService.getAllVehiclesBelongingTo(owner));
         return ownerVehicle;
     }
