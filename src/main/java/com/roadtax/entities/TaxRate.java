@@ -8,34 +8,39 @@ public class TaxRate implements java.io.Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long rateId;
-
-    @ManyToOne
-    @JoinColumn(name = "category_id")
-    private VehicleCategory vehicleCategory;
+    private int rateId;
 
     private Double taxRate;
+
+    @ManyToOne
+    @JoinColumn(name = "engine_type_id")
+    private EngineType engineType;
+
+    @ManyToOne
+    @JoinColumn(name = "emission_band_id")
+    private EmissionBand emissionBand;
+
+    private int monthsCovered;
+
+    private boolean firstYear;
+
+    private boolean directDebit;
 
     @Temporal(TemporalType.DATE)
     private Date effectiveFrom;
 
+    @Temporal(TemporalType.DATE)
+    private Date effectiveTo;
+
     public TaxRate() {
     }
 
-    public Long getRateId() {
+    public int getRateId() {
         return rateId;
     }
 
-    public void setRateId(Long rateId) {
+    public void setRateId(int rateId) {
         this.rateId = rateId;
-    }
-
-    public VehicleCategory getVehicleCategory() {
-        return vehicleCategory;
-    }
-
-    public void setVehicleCategory(VehicleCategory vehicleCategory) {
-        this.vehicleCategory = vehicleCategory;
     }
 
     public Double getTaxRate() {
@@ -46,12 +51,60 @@ public class TaxRate implements java.io.Serializable{
         this.taxRate = taxRate;
     }
 
+    public EngineType getEngineType() {
+        return engineType;
+    }
+
+    public void setEngineType(EngineType engineType) {
+        this.engineType = engineType;
+    }
+
+    public EmissionBand getEmissionBand() {
+        return emissionBand;
+    }
+
+    public void setEmissionBand(EmissionBand emissionBand) {
+        this.emissionBand = emissionBand;
+    }
+
+    public int getMonthsCovered() {
+        return monthsCovered;
+    }
+
+    public void setMonthsCovered(int monthsCovered) {
+        this.monthsCovered = monthsCovered;
+    }
+
+    public boolean isFirstYear() {
+        return firstYear;
+    }
+
+    public void setFirstYear(boolean firstYear) {
+        this.firstYear = firstYear;
+    }
+
+    public boolean isDirectDebit() {
+        return directDebit;
+    }
+
+    public void setDirectDebit(boolean directDebit) {
+        this.directDebit = directDebit;
+    }
+
     public Date getEffectiveFrom() {
         return effectiveFrom;
     }
 
     public void setEffectiveFrom(Date effectiveFrom) {
         this.effectiveFrom = effectiveFrom;
+    }
+
+    public Date getEffectiveTo() {
+        return effectiveTo;
+    }
+
+    public void setEffectiveTo(Date effectiveTo) {
+        this.effectiveTo = effectiveTo;
     }
 }
 

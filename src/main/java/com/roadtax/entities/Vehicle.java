@@ -9,7 +9,7 @@ public class Vehicle implements java.io.Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long vehicleId;
+    private int vehicleId;
 
     @ManyToOne
     @JoinColumn(name = "owner_id")
@@ -24,8 +24,12 @@ public class Vehicle implements java.io.Serializable{
     private Date registrationDate;
 
     @ManyToOne
-    @JoinColumn(name = "category_id")
-    private VehicleCategory category;
+    @JoinColumn(name = "engine_type_id")
+    private EngineType engineType;
+
+    @ManyToOne
+    @JoinColumn(name = "emission_band_id")
+    private EmissionBand emissionBand;
 
     @OneToMany(mappedBy = "vehicle", cascade = CascadeType.ALL)
     private Set<TaxPayment> taxPayments;
@@ -33,11 +37,11 @@ public class Vehicle implements java.io.Serializable{
     public Vehicle() {
     }
 
-    public Long getVehicleId() {
+    public int getVehicleId() {
         return vehicleId;
     }
 
-    public void setVehicleId(Long vehicleId) {
+    public void setVehicleId(int vehicleId) {
         this.vehicleId = vehicleId;
     }
 
@@ -97,12 +101,20 @@ public class Vehicle implements java.io.Serializable{
         this.registrationDate = registrationDate;
     }
 
-    public VehicleCategory getCategory() {
-        return category;
+    public EngineType getEngineType() {
+        return engineType;
     }
 
-    public void setCategory(VehicleCategory category) {
-        this.category = category;
+    public void setEngineType(EngineType engineType) {
+        this.engineType = engineType;
+    }
+
+    public EmissionBand getEmissionBand() {
+        return emissionBand;
+    }
+
+    public void setEmissionBand(EmissionBand emissionBand) {
+        this.emissionBand = emissionBand;
     }
 
     public Set<TaxPayment> getTaxPayments() {

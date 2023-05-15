@@ -2,7 +2,7 @@ package com.roadtax.entities;
 
 public class VehicleShortDTO
 {
-    private Long vehicleId;
+    private int vehicleId;
     private String make;
     private String model;
     private String licensePlate;
@@ -11,12 +11,12 @@ public class VehicleShortDTO
     {
     }
 
-    public Long getVehicleId()
+    public int getVehicleId()
     {
         return vehicleId;
     }
 
-    public void setVehicleId(Long vehicleId)
+    public void setVehicleId(int vehicleId)
     {
         this.vehicleId = vehicleId;
     }

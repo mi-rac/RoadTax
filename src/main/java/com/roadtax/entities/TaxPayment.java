@@ -8,7 +8,7 @@ public class TaxPayment implements java.io.Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long paymentId;
+    private int paymentId;
 
     @ManyToOne
     @JoinColumn(name = "vehicle_id")
@@ -27,11 +27,11 @@ public class TaxPayment implements java.io.Serializable{
     public TaxPayment() {
     }
 
-    public Long getPaymentId() {
+    public int getPaymentId() {
         return paymentId;
     }
 
-    public void setPaymentId(Long paymentId) {
+    public void setPaymentId(int paymentId) {
         this.paymentId = paymentId;
     }
 

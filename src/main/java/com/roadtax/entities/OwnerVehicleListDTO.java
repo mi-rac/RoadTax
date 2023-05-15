@@ -4,7 +4,7 @@ import java.util.List;
 
 public class OwnerVehicleListDTO
 {
-    private Long ownerId;
+    private int ownerId;
     private String firstName;
     private String lastName;
     private String email;
@@ -13,11 +13,11 @@ public class OwnerVehicleListDTO
     public OwnerVehicleListDTO() {
     }
 
-    public Long getOwnerId() {
+    public int getOwnerId() {
         return ownerId;
     }
 
-    public void setOwnerId(Long ownerId) {
+    public void setOwnerId(int ownerId) {
         this.ownerId = ownerId;
     }
 
