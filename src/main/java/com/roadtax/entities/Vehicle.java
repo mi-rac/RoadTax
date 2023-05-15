@@ -12,7 +12,7 @@ public class Vehicle implements java.io.Serializable{
     private Long vehicleId;
 
     @ManyToOne
-    @JoinColumn(name = "ownerId")
+    @JoinColumn(name = "owner_id")
     private Owner owner;
     private String make;
     private String model;
@@ -23,8 +23,9 @@ public class Vehicle implements java.io.Serializable{
     @Temporal(TemporalType.DATE)
     private Date registrationDate;
 
-    @OneToMany(mappedBy = "vehicle", cascade = CascadeType.ALL)
-    private Set<VehicleCategoryRelation> vehicleCategoryRelations;
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private VehicleCategory category;
 
     @OneToMany(mappedBy = "vehicle", cascade = CascadeType.ALL)
     private Set<TaxPayment> taxPayments;
@@ -96,12 +97,12 @@ public class Vehicle implements java.io.Serializable{
         this.registrationDate = registrationDate;
     }
 
-    public Set<VehicleCategoryRelation> getVehicleCategoryRelations() {
-        return vehicleCategoryRelations;
+    public VehicleCategory getCategory() {
+        return category;
     }
 
-    public void setVehicleCategoryRelations(Set<VehicleCategoryRelation> vehicleCategoryRelations) {
-        this.vehicleCategoryRelations = vehicleCategoryRelations;
+    public void setCategory(VehicleCategory category) {
+        this.category = category;
     }
 
     public Set<TaxPayment> getTaxPayments() {

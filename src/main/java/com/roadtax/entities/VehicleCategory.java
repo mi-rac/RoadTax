@@ -12,8 +12,8 @@ public class VehicleCategory implements java.io.Serializable{
     private String categoryName;
     private String categoryDescription;
 
-    @OneToMany(mappedBy = "vehicleCategory", cascade = CascadeType.ALL)
-    private Set<VehicleCategoryRelation> vehicleCategoryRelations;
+    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
+    private Set<Vehicle> vehicles;
 
     @OneToMany(mappedBy = "vehicleCategory", cascade = CascadeType.ALL)
     private Set<RoadTaxRate> roadTaxRates;
@@ -45,12 +45,12 @@ public class VehicleCategory implements java.io.Serializable{
         this.categoryDescription = categoryDescription;
     }
 
-    public Set<VehicleCategoryRelation> getVehicleCategoryRelations() {
-        return vehicleCategoryRelations;
+    public Set<Vehicle> getVehicles() {
+        return vehicles;
     }
 
-    public void setVehicleCategoryRelations(Set<VehicleCategoryRelation> vehicleCategoryRelations) {
-        this.vehicleCategoryRelations = vehicleCategoryRelations;
+    public void setVehicles(Set<Vehicle> vehicles) {
+        this.vehicles = vehicles;
     }
 
     public Set<RoadTaxRate> getRoadTaxRates() {
