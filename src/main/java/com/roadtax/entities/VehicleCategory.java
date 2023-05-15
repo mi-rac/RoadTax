@@ -9,14 +9,14 @@ public class VehicleCategory implements java.io.Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long categoryId;
-    private String categoryName;
-    private String categoryDescription;
+    private String engineType;
+    private String emissions;
 
     @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
     private Set<Vehicle> vehicles;
 
     @OneToMany(mappedBy = "vehicleCategory", cascade = CascadeType.ALL)
-    private Set<RoadTaxRate> roadTaxRates;
+    private Set<TaxRate> taxRates;
 
     public VehicleCategory() {
     }
@@ -29,20 +29,20 @@ public class VehicleCategory implements java.io.Serializable{
         this.categoryId = categoryId;
     }
 
-    public String getCategoryName() {
-        return categoryName;
+    public String getEngineType() {
+        return engineType;
     }
 
-    public void setCategoryName(String categoryName) {
-        this.categoryName = categoryName;
+    public void setEngineType(String engineType) {
+        this.engineType = engineType;
     }
 
-    public String getCategoryDescription() {
-        return categoryDescription;
+    public String getEmissions() {
+        return emissions;
     }
 
-    public void setCategoryDescription(String categoryDescription) {
-        this.categoryDescription = categoryDescription;
+    public void setEmissions(String emissions) {
+        this.emissions = emissions;
     }
 
     public Set<Vehicle> getVehicles() {
@@ -53,12 +53,12 @@ public class VehicleCategory implements java.io.Serializable{
         this.vehicles = vehicles;
     }
 
-    public Set<RoadTaxRate> getRoadTaxRates() {
-        return roadTaxRates;
+    public Set<TaxRate> getRoadTaxRates() {
+        return taxRates;
     }
 
-    public void setRoadTaxRates(Set<RoadTaxRate> roadTaxRates) {
-        this.roadTaxRates = roadTaxRates;
+    public void setRoadTaxRates(Set<TaxRate> taxRates) {
+        this.taxRates = taxRates;
     }
 }
 

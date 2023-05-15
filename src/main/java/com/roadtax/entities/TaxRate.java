@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-public class RoadTaxRate implements java.io.Serializable{
+public class TaxRate implements java.io.Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,7 +19,7 @@ public class RoadTaxRate implements java.io.Serializable{
     @Temporal(TemporalType.DATE)
     private Date effectiveFrom;
 
-    public RoadTaxRate() {
+    public TaxRate() {
     }
 
     public Long getRateId() {

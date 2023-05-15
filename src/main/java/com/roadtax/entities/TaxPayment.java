@@ -16,7 +16,7 @@ public class TaxPayment implements java.io.Serializable{
 
     @ManyToOne
     @JoinColumn(name = "rate_id")
-    private RoadTaxRate roadTaxRate;
+    private TaxRate taxRate;
 
     @Temporal(TemporalType.DATE)
     private Date paymentDate;
@@ -43,12 +43,12 @@ public class TaxPayment implements java.io.Serializable{
         this.vehicle = vehicle;
     }
 
-    public RoadTaxRate getRoadTaxRate() {
-        return roadTaxRate;
+    public TaxRate getRoadTaxRate() {
+        return taxRate;
     }
 
-    public void setRoadTaxRate(RoadTaxRate roadTaxRate) {
-        this.roadTaxRate = roadTaxRate;
+    public void setRoadTaxRate(TaxRate taxRate) {
+        this.taxRate = taxRate;
     }
 
     public Date getPaymentDate() {
