@@ -1,10 +1,10 @@
 package com.roadtax.repositories;
 
-import com.roadtax.entities.Owner;
+import com.roadtax.entities.EmissionBand;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 @RepositoryRestResource(collectionResourceRel = "emissionBand", path="emissionBand")
-public interface EmissionBandRepository extends JpaRepository<Owner, Long>
+public interface EmissionBandRepository extends JpaRepository<EmissionBand, Long>
 {
 }
