@@ -12,13 +12,12 @@ public class RepositoryConfig implements RepositoryRestConfigurer
     @Override
     public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config, CorsRegistry cors)
     {
-        // expose id's for all entities
-        config.exposeIdsFor(EmissionBand.class);
-        config.exposeIdsFor(EngineType.class);
-        config.exposeIdsFor(Owner.class);
-        config.exposeIdsFor(OwnerVehicleListDTO.class);
-        config.exposeIdsFor(TaxPayment.class);
-        config.exposeIdsFor(TaxRate.class);
-        config.exposeIdsFor(Vehicle.class);
+//        config.exposeIdsFor(EmissionBand.class);
+//        config.exposeIdsFor(EngineType.class);
+//        config.exposeIdsFor(Owner.class);
+//        config.exposeIdsFor(OwnerVehicleListDTO.class);
+//        config.exposeIdsFor(TaxPayment.class);
+//        config.exposeIdsFor(TaxRate.class);
+//        config.exposeIdsFor(Vehicle.class);
     }
 }
