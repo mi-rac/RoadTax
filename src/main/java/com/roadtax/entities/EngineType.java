@@ -35,4 +35,20 @@ public class EngineType implements java.io.Serializable {
     public void setType(String type) {
         this.type = type;
     }
+
+    public Set<Vehicle> getVehicles() {
+        return vehicles;
+    }
+
+    public void setVehicles(Set<Vehicle> vehicles) {
+        this.vehicles = vehicles;
+    }
+
+    public Set<TaxRate> getTaxRates() {
+        return taxRates;
+    }
+
+    public void setTaxRates(Set<TaxRate> taxRates) {
+        this.taxRates = taxRates;
+    }
 }

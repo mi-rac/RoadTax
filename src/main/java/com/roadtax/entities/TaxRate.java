@@ -22,15 +22,21 @@ public class TaxRate implements java.io.Serializable{
 
     private int monthsCovered;
 
+    @Column(nullable = true)
     private boolean firstYear;
 
+    @Column(nullable = true)
     private boolean directDebit;
 
     @Temporal(TemporalType.DATE)
     private Date effectiveFrom;
 
+    @Column(nullable = true)
     @Temporal(TemporalType.DATE)
     private Date effectiveTo;
+
+    @Column(nullable = true)
+    private boolean richTax;
 
     public TaxRate() {
     }
@@ -105,6 +111,14 @@ public class TaxRate implements java.io.Serializable{
 
     public void setEffectiveTo(Date effectiveTo) {
         this.effectiveTo = effectiveTo;
+    }
+
+    public boolean isRichTax() {
+        return richTax;
+    }
+
+    public void setRichTax(boolean richTax) {
+        this.richTax = richTax;
     }
 }
 
