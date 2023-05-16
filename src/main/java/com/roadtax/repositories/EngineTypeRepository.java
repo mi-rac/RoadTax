@@ -5,6 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 @RepositoryRestResource(collectionResourceRel = "engineType", path="engineType")
-public interface EngineTypeRepository extends JpaRepository<EngineType, Long>
+public interface EngineTypeRepository extends JpaRepository<EngineType, Integer>
 {
 }

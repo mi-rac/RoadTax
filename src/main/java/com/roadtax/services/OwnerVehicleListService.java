@@ -35,7 +35,7 @@ public class OwnerVehicleListService
         return owners.findAll().stream().map(this::convertToOwnerVehicleDTO).collect(Collectors.toList());
     }
 
-    public OwnerVehicleListDTO getOwnerVehicleListDTOById(Long id)
+    public OwnerVehicleListDTO getOwnerVehicleListDTOById(Integer id)
     {
         Optional<Owner> owner = owners.findById(id);
         return owner.map(this::convertToOwnerVehicleDTO).orElse(null);

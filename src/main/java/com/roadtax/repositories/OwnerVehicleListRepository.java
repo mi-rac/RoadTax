@@ -25,8 +25,8 @@ public class OwnerVehicleListRepository
         return ownerVehicleListService.getAllOwnerVehicleListDTO();
     }
 
-    @GetMapping("/owner/{id}/vehicleList")
-    public OwnerVehicleListDTO getOwnerVehicleListByID(@PathVariable("id") Long id)
+    @GetMapping("/owner/vehicleList/{id}")
+    public OwnerVehicleListDTO getOwnerVehicleListByID(@PathVariable("id") Integer id)
     {
         OwnerVehicleListDTO ownerVehicleList = ownerVehicleListService.getOwnerVehicleListDTOById(id);
 

@@ -5,6 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 @RepositoryRestResource(collectionResourceRel = "emissionBand", path="emissionBand")
-public interface EmissionBandRepository extends JpaRepository<EmissionBand, Long>
+public interface EmissionBandRepository extends JpaRepository<EmissionBand, Integer>
 {
 }
