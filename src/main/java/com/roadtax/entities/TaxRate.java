@@ -8,44 +8,31 @@ public class TaxRate implements java.io.Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int rateId;
-
+    private Integer rateId;
     private Double taxRate;
-
     @ManyToOne
     @JoinColumn(name = "engine_type_id")
     private EngineType engineType;
-
     @ManyToOne
     @JoinColumn(name = "emission_band_id")
     private EmissionBand emissionBand;
-
-    private int monthsCovered;
-
-    @Column(nullable = true)
-    private boolean firstYear;
-
-    @Column(nullable = true)
-    private boolean directDebit;
-
+    private Integer monthsCovered;
+    private Boolean firstYear;
+    private Boolean directDebit;
     @Temporal(TemporalType.DATE)
     private Date effectiveFrom;
-
-    @Column(nullable = true)
     @Temporal(TemporalType.DATE)
     private Date effectiveTo;
-
-    @Column(nullable = true)
-    private boolean richTax;
+    private Boolean richTax;
 
     public TaxRate() {
     }
 
-    public int getRateId() {
+    public Integer getRateId() {
         return rateId;
     }
 
-    public void setRateId(int rateId) {
+    public void setRateId(Integer rateId) {
         this.rateId = rateId;
     }
 
@@ -73,27 +60,27 @@ public class TaxRate implements java.io.Serializable{
         this.emissionBand = emissionBand;
     }
 
-    public int getMonthsCovered() {
+    public Integer getMonthsCovered() {
         return monthsCovered;
     }
 
-    public void setMonthsCovered(int monthsCovered) {
+    public void setMonthsCovered(Integer monthsCovered) {
         this.monthsCovered = monthsCovered;
     }
 
-    public boolean isFirstYear() {
+    public Boolean isFirstYear() {
         return firstYear;
     }
 
-    public void setFirstYear(boolean firstYear) {
+    public void setFirstYear(Boolean firstYear) {
         this.firstYear = firstYear;
     }
 
-    public boolean isDirectDebit() {
+    public Boolean isDirectDebit() {
         return directDebit;
     }
 
-    public void setDirectDebit(boolean directDebit) {
+    public void setDirectDebit(Boolean directDebit) {
         this.directDebit = directDebit;
     }
 
@@ -113,11 +100,11 @@ public class TaxRate implements java.io.Serializable{
         this.effectiveTo = effectiveTo;
     }
 
-    public boolean isRichTax() {
+    public Boolean isRichTax() {
         return richTax;
     }
 
-    public void setRichTax(boolean richTax) {
+    public void setRichTax(Boolean richTax) {
         this.richTax = richTax;
     }
 }

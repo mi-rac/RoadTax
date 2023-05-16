@@ -4,7 +4,7 @@ import java.util.List;
 
 public class VehicleTaxPaymentDTO {
 
-    private int vehicleId;
+    private Integer vehicleId;
     private String make;
     private String model;
     private String licensePlate;
@@ -13,11 +13,11 @@ public class VehicleTaxPaymentDTO {
     public VehicleTaxPaymentDTO() {
     }
 
-    public int getVehicleId() {
+    public Integer getVehicleId() {
         return vehicleId;
     }
 
-    public void setVehicleId(int vehicleId) {
+    public void setVehicleId(Integer vehicleId) {
         this.vehicleId = vehicleId;
     }
 

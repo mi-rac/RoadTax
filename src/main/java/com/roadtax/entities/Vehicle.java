@@ -9,8 +9,7 @@ public class Vehicle implements java.io.Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int vehicleId;
-
+    private Integer vehicleId;
     @ManyToOne
     @JoinColumn(name = "owner_id")
     private Owner owner;
@@ -19,29 +18,24 @@ public class Vehicle implements java.io.Serializable{
     private Integer year;
     private String licensePlate;
     private String vinNumber;
-
     @Temporal(TemporalType.DATE)
     private Date registrationDate;
-
     @ManyToOne
     @JoinColumn(name = "engine_type_id")
     private EngineType engineType;
-
     private Double emissions;
-
     private Double listingPrice;
-
     @OneToMany(mappedBy = "vehicle", cascade = CascadeType.ALL)
     private Set<TaxPayment> taxPayments;
 
     public Vehicle() {
     }
 
-    public int getVehicleId() {
+    public Integer getVehicleId() {
         return vehicleId;
     }
 
-    public void setVehicleId(int vehicleId) {
+    public void setVehicleId(Integer vehicleId) {
         this.vehicleId = vehicleId;
     }
 

@@ -8,7 +8,7 @@ public class EngineType implements java.io.Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
     private String type;
 
     @OneToMany(mappedBy = "engineType", cascade = CascadeType.ALL)
@@ -20,11 +20,11 @@ public class EngineType implements java.io.Serializable {
     public EngineType() {
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

@@ -8,7 +8,7 @@ public class Owner implements java.io.Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int ownerId;
+    private Integer ownerId;
     private String firstName;
     private String lastName;
     private String address;
@@ -24,11 +24,11 @@ public class Owner implements java.io.Serializable{
     public Owner() {
     }
 
-    public int getOwnerId() {
+    public Integer getOwnerId() {
         return ownerId;
     }
 
-    public void setOwnerId(int ownerId) {
+    public void setOwnerId(Integer ownerId) {
         this.ownerId = ownerId;
     }
 

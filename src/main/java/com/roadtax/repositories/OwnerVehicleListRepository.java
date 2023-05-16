@@ -13,7 +13,7 @@ import org.springframework.web.server.ResponseStatusException;
 import java.util.List;
 
 @RestController
-@Api(tags = "Owner Entity")
+@Api(tags = "DTO")
 public class OwnerVehicleListRepository
 {
     @Autowired
@@ -25,7 +25,7 @@ public class OwnerVehicleListRepository
         return ownerVehicleListService.getAllOwnerVehicleListDTO();
     }
 
-    @GetMapping("/owner/vehicleList/{id}")
+    @GetMapping("/owner/{id}/vehicleList")
     public OwnerVehicleListDTO getOwnerVehicleListByID(@PathVariable("id") Long id)
     {
         OwnerVehicleListDTO ownerVehicleList = ownerVehicleListService.getOwnerVehicleListDTOById(id);
