@@ -17,9 +17,6 @@ public class EmissionBand implements java.io.Serializable {
     private boolean after2017;
 
     @OneToMany(mappedBy = "emissionBand", cascade = CascadeType.ALL)
-    private Set<Vehicle> vehicles;
-
-    @OneToMany(mappedBy = "emissionBand", cascade = CascadeType.ALL)
     private Set<TaxRate> taxRates;
 
     public int getId() {
@@ -63,14 +60,6 @@ public class EmissionBand implements java.io.Serializable {
 
     public void setAfter2017(boolean after2017) {
         this.after2017 = after2017;
-    }
-
-    public Set<Vehicle> getVehicles() {
-        return vehicles;
-    }
-
-    public void setVehicles(Set<Vehicle> vehicles) {
-        this.vehicles = vehicles;
     }
 
     public Set<TaxRate> getTaxRates() {

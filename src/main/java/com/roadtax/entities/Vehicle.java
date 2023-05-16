@@ -27,9 +27,9 @@ public class Vehicle implements java.io.Serializable{
     @JoinColumn(name = "engine_type_id")
     private EngineType engineType;
 
-    @ManyToOne
-    @JoinColumn(name = "emission_band_id")
-    private EmissionBand emissionBand;
+    private Double emissions;
+
+    private Double listingPrice;
 
     @OneToMany(mappedBy = "vehicle", cascade = CascadeType.ALL)
     private Set<TaxPayment> taxPayments;
@@ -109,12 +109,12 @@ public class Vehicle implements java.io.Serializable{
         this.engineType = engineType;
     }
 
-    public EmissionBand getEmissionBand() {
-        return emissionBand;
+    public Double getEmissions() {
+        return emissions;
     }
 
-    public void setEmissionBand(EmissionBand emissionBand) {
-        this.emissionBand = emissionBand;
+    public void setEmissions(Double emissions) {
+        this.emissions = emissions;
     }
 
     public Set<TaxPayment> getTaxPayments() {
@@ -123,6 +123,14 @@ public class Vehicle implements java.io.Serializable{
 
     public void setTaxPayments(Set<TaxPayment> taxPayments) {
         this.taxPayments = taxPayments;
+    }
+
+    public Double getListingPrice() {
+        return listingPrice;
+    }
+
+    public void setListingPrice(Double listingPrice) {
+        this.listingPrice = listingPrice;
     }
 }
 
