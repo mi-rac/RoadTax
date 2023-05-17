@@ -18,7 +18,7 @@ public class OwnerVehicleListDTOService
     private OwnerRepository owners;
 
     @Autowired
-    private VehiclePaymentsDTOService vehicleShort;
+    private VehiclePaymentsDTOService vehiclePaymentsDTOService;
 
     public OwnerVehicleListDTO convertToOwnerVehicleDTO(Owner owner)
     {
@@ -43,6 +43,6 @@ public class OwnerVehicleListDTOService
 
     public List<VehiclePaymentsDTO> getAllVehiclesBelongingTo(Owner owner)
     {
-        return owner.getVehicles().stream().map(vehicleShort::convertToVehicleShortDTO).collect(Collectors.toList());
+        return owner.getVehicles().stream().map(vehiclePaymentsDTOService::convertToVehiclePaymentDTO).collect(Collectors.toList());
     }
 }

@@ -32,13 +32,13 @@ public class Vehicle implements java.io.Serializable{
     }
     public Boolean isVehicleTaxed()
     {
-        return this.getTaxPayments().stream().anyMatch(payment -> payment.getValidUntil().after(new java.util.Date()));
+        return this.getPayments().stream().anyMatch(payment -> payment.getValidUntil().after(new java.util.Date()));
     }
 
     public Date getTaxedUntil()
     {
         // return the date corresponding to the latest value in the "validUntil" field of the TaxPayment objects
-        return this.getTaxPayments().stream().map(Payment::getValidUntil).max(Date::compareTo).orElse(null);
+        return this.getPayments().stream().map(Payment::getValidUntil).max(Date::compareTo).orElse(null);
     }
 
     public Integer getVehicleId() {
@@ -121,11 +121,11 @@ public class Vehicle implements java.io.Serializable{
         this.emissions = emissions;
     }
 
-    public Set<Payment> getTaxPayments() {
+    public Set<Payment> getPayments() {
         return payments;
     }
 
-    public void setTaxPayments(Set<Payment> payments) {
+    public void setPayments(Set<Payment> payments) {
         this.payments = payments;
     }
 

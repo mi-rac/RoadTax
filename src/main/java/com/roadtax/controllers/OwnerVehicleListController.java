@@ -25,7 +25,7 @@ public class OwnerVehicleListController
         return ownerVehicleListDTOService.getAllOwnerVehicleListDTO();
     }
 
-    @GetMapping("/owner/vehicleList/{id}")
+    @GetMapping("/owner/{id}/vehicleList")
     public OwnerVehicleListDTO getOwnerVehicleListByID(@PathVariable("id") Integer id)
     {
         OwnerVehicleListDTO ownerVehicleList = ownerVehicleListDTOService.getOwnerVehicleListDTOById(id);

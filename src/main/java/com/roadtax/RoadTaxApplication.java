@@ -1,7 +1,7 @@
 package com.roadtax;
 
 import com.roadtax.controllers.PaymentRepository;
-import com.roadtax.services.PaymentService;
+import com.roadtax.services.PaymentDTOService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +16,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 public class RoadTaxApplication
 {
     @Autowired
-    PaymentService taxService;
+    PaymentDTOService taxService;
 
     private static final Logger log = LoggerFactory.getLogger(RoadTaxApplication.class);
     public static void main(String[] args) {

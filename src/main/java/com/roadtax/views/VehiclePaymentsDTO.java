@@ -13,18 +13,17 @@ public class VehiclePaymentsDTO
     private String licensePlate;
     private Boolean taxed;
     private Date taxedUntil;
-
-    private List<Payment> payments;
+    private List<PaymentDTO> payments;
 
     public VehiclePaymentsDTO()
     {
     }
 
-    public List<Payment> getPayments() {
+    public List<PaymentDTO> getPayments() {
         return payments;
     }
 
-    public void setPayments(List<Payment> payments) {
+    public void setPayments(List<PaymentDTO> payments) {
         this.payments = payments;
     }
 
