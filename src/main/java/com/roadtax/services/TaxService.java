@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 @Service
 public class TaxService
@@ -25,7 +26,7 @@ public class TaxService
     public void makePayment(PaymentOptionsDTO paymentOptions, Integer vehicleId) {
         TaxRate rate = findTaxRate(vehicleId, paymentOptions);
         if (rate != null) {
-            Payment payment = newPayment(vehicleId, rate.getRateId(), paymentOptions.getPaymentDate().toString(), "Paid");
+            Payment payment = newPayment(vehicleId, rate.getRateId(), new SimpleDateFormat("yyyy-MM-dd").format(paymentOptions.getPaymentDate()), "Paid");
             payments.save(payment);
         }
     }
