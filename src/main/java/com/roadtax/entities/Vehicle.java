@@ -30,6 +30,16 @@ public class Vehicle implements java.io.Serializable{
 
     public Vehicle() {
     }
+    public Boolean isVehicleTaxed()
+    {
+        return this.getTaxPayments().stream().anyMatch(taxPayment -> taxPayment.getValidUntil().after(new java.util.Date()));
+    }
+
+    public Date getTaxedUntil()
+    {
+        // return the date corresponding to the latest value in the "validUntil" field of the TaxPayment objects
+        return this.getTaxPayments().stream().map(TaxPayment::getValidUntil).max(Date::compareTo).orElse(null);
+    }
 
     public Integer getVehicleId() {
         return vehicleId;

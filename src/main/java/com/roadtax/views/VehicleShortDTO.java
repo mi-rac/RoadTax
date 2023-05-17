@@ -1,5 +1,7 @@
 package com.roadtax.views;
 
+import java.util.Date;
+
 public class VehicleShortDTO
 {
     private Integer vehicleId;
@@ -7,9 +9,18 @@ public class VehicleShortDTO
     private String model;
     private String licensePlate;
     private Boolean taxed;
+    private Date taxedUntil;
 
     public VehicleShortDTO()
     {
+    }
+
+    public Date getTaxedUntil() {
+        return taxedUntil;
+    }
+
+    public void setTaxedUntil(Date taxedUntil) {
+        this.taxedUntil = taxedUntil;
     }
 
     public Boolean getTaxed() {

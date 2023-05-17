@@ -4,7 +4,8 @@ import com.roadtax.entities.TaxPayment;
 
 import java.util.List;
 
-public class VehicleTaxPaymentDTO {
+public class VehicleTaxPaymentsDTO
+{
 
     private Integer vehicleId;
     private String make;
@@ -12,7 +13,7 @@ public class VehicleTaxPaymentDTO {
     private String licensePlate;
     private List<TaxPayment> taxPayments;
 
-    public VehicleTaxPaymentDTO() {
+    public VehicleTaxPaymentsDTO() {
     }
 
     public Integer getVehicleId() {

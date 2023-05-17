@@ -21,10 +21,28 @@ public class TaxPayment implements java.io.Serializable{
     @Temporal(TemporalType.DATE)
     private Date paymentDate;
 
-    private Double paymentAmount;
+    @Temporal(TemporalType.DATE)
+    private Date validUntil;
+
     private String paymentStatus;
 
     public TaxPayment() {
+    }
+
+    public TaxRate getTaxRate() {
+        return taxRate;
+    }
+
+    public void setTaxRate(TaxRate taxRate) {
+        this.taxRate = taxRate;
+    }
+
+    public Date getValidUntil() {
+        return validUntil;
+    }
+
+    public void setValidUntil(Date validUntil) {
+        this.validUntil = validUntil;
     }
 
     public Integer getPaymentId() {
@@ -57,14 +75,6 @@ public class TaxPayment implements java.io.Serializable{
 
     public void setPaymentDate(Date paymentDate) {
         this.paymentDate = paymentDate;
-    }
-
-    public Double getPaymentAmount() {
-        return paymentAmount;
-    }
-
-    public void setPaymentAmount(Double paymentAmount) {
-        this.paymentAmount = paymentAmount;
     }
 
     public String getPaymentStatus() {

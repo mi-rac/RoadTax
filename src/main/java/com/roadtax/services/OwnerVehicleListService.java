@@ -3,6 +3,7 @@ package com.roadtax.services;
 import com.roadtax.entities.Owner;
 import com.roadtax.views.OwnerVehicleListDTO;
 import com.roadtax.controllers.OwnerRepository;
+import com.roadtax.views.VehicleShortDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,21 +14,20 @@ import java.util.stream.Collectors;
 @Service
 public class OwnerVehicleListService
 {
-
-    @Autowired
-    private VehicleShortService vehicleShortService;
-
     @Autowired
     private OwnerRepository owners;
 
-    private OwnerVehicleListDTO convertToOwnerVehicleDTO(Owner owner)
+    @Autowired
+    private VehicleShortService vehicleShort;
+
+    public OwnerVehicleListDTO convertToOwnerVehicleDTO(Owner owner)
     {
         OwnerVehicleListDTO ownerVehicle = new OwnerVehicleListDTO();
         ownerVehicle.setOwnerId(owner.getOwnerId());
         ownerVehicle.setFirstName(owner.getFirstName());
         ownerVehicle.setLastName(owner.getLastName());
         ownerVehicle.setEmail(owner.getEmail());
-        ownerVehicle.setVehicles(vehicleShortService.getAllVehiclesBelongingTo(owner));
+        ownerVehicle.setVehicles(getAllVehiclesBelongingTo(owner));
         return ownerVehicle;
     }
 
@@ -39,5 +39,10 @@ public class OwnerVehicleListService
     {
         Optional<Owner> owner = owners.findById(id);
         return owner.map(this::convertToOwnerVehicleDTO).orElse(null);
+    }
+
+    public List<VehicleShortDTO> getAllVehiclesBelongingTo(Owner owner)
+    {
+        return owner.getVehicles().stream().map(vehicleShort::convertToVehicleShortDTO).collect(Collectors.toList());
     }
 }
