@@ -25,7 +25,7 @@ public class TaxService
     public void makePayment(PaymentOptionsDTO paymentOptions, Integer vehicleId) {
         TaxRate rate = findTaxRate(vehicleId, paymentOptions);
         if (rate != null) {
-            Payment payment = newPayment(vehicleId, rate.getRateId(), (Date) paymentOptions.getPaymentDate(), "Paid");
+            Payment payment = newPayment(vehicleId, rate.getRateId(), paymentOptions.getPaymentDate().toString(), "Paid");
             payments.save(payment);
         }
     }
@@ -50,23 +50,24 @@ public class TaxService
         return null;
     }
 
-    public Payment newPayment(Integer vehicleId, Integer taxRateId, Date paymentDate, String paymentStatus) {
+    public Payment newPayment(Integer vehicleId, Integer taxRateId, String paymentDate, String paymentStatus) {
         Payment payment = new Payment();
         Vehicle vehicle = vehicles.findById(vehicleId).orElse(null);
         TaxRate rate = rates.findById(taxRateId).orElse(null);
+        Date payDate = Date.valueOf(paymentDate);
 
         Calendar calendar = Calendar.getInstance();
         Date validUntil = null;
 
         if (rate != null) {
-            calendar.setTime(paymentDate);
+            calendar.setTime(payDate);
             calendar.add(Calendar.MONTH, rate.getMonthsCovered());
             validUntil = new Date(calendar.getTimeInMillis());
         }
 
         payment.setVehicle(vehicle);
         payment.setTaxRate(rate);
-        payment.setPaymentDate(paymentDate);
+        payment.setPaymentDate(payDate);
         payment.setValidUntil(validUntil);
         payment.setPaymentStatus(paymentStatus);
 
