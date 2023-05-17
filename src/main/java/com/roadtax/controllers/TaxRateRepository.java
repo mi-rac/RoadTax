@@ -23,8 +23,8 @@ public interface TaxRateRepository extends JpaRepository<TaxRate, Integer>
             "t.monthsCovered = :duration AND " +
             "t.firstYear = :firstYear AND " +
             "t.richTax = :richTax AND " +
-            "t.emissionBand = :emissionBandId AND " +
-            "t.engineType = :engineTypeId")
+            "t.emissionBand.id = :emissionBandId AND " +
+            "(t.engineType.id = :engineTypeId OR t.engineType IS NULL)")
     TaxRate findTaxRates(@Param("directDebit") Boolean directDebit,
                          @Param("registrationDate") Date registrationDate,
                          @Param("firstYear") Boolean firstYear,

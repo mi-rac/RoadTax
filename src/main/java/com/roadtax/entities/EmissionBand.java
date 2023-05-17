@@ -10,8 +10,8 @@ public class EmissionBand implements java.io.Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String band;
-    private Integer co2lower;
-    private Integer co2upper;
+    private Double co2lower;
+    private Double co2upper;
     private Boolean after2017;
     @OneToMany(mappedBy = "emissionBand", cascade = CascadeType.ALL)
     private Set<TaxRate> taxRates;
@@ -35,23 +35,23 @@ public class EmissionBand implements java.io.Serializable {
         this.band = band;
     }
 
-    public Integer getCo2lower() {
+    public Double getCo2lower() {
         return co2lower;
     }
 
-    public void setCo2lower(Integer co2lower) {
+    public void setCo2lower(Double co2lower) {
         this.co2lower = co2lower;
     }
 
-    public Integer getCo2upper() {
+    public Double getCo2upper() {
         return co2upper;
     }
 
-    public void setCo2upper(Integer co2upper) {
+    public void setCo2upper(Double co2upper) {
         this.co2upper = co2upper;
     }
 
-    public Boolean isAfter2017() {
+    public Boolean getAfter2017() {
         return after2017;
     }
 
