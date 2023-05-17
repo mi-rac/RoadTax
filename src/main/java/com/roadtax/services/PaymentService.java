@@ -2,7 +2,7 @@ package com.roadtax.services;
 
 import com.roadtax.controllers.TaxRateRepository;
 import com.roadtax.controllers.VehicleRepository;
-import com.roadtax.entities.TaxPayment;
+import com.roadtax.entities.Payment;
 import com.roadtax.entities.TaxRate;
 import com.roadtax.entities.Vehicle;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +13,7 @@ import java.util.Calendar;
 
 
 @Service
-public class TaxPaymentService
+public class PaymentService
 {
     @Autowired
     private VehicleRepository vehicles;
@@ -21,8 +21,8 @@ public class TaxPaymentService
     @Autowired
     private TaxRateRepository rates;
 
-    public TaxPayment newPayment(Integer vehicleId, Integer taxRateId, String paymentDate, String paymentStatus) {
-        TaxPayment payment = new TaxPayment();
+    public Payment newPayment(Integer vehicleId, Integer taxRateId, String paymentDate, String paymentStatus) {
+        Payment payment = new Payment();
         Vehicle vehicle = vehicles.findById(vehicleId).orElse(null);
         TaxRate rate = rates.findById(taxRateId).orElse(null);
         Date payDate = Date.valueOf(paymentDate);

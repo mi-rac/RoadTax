@@ -26,19 +26,19 @@ public class Vehicle implements java.io.Serializable{
     private Double emissions;
     private Double listingPrice;
     @OneToMany(mappedBy = "vehicle", cascade = CascadeType.ALL)
-    private Set<TaxPayment> taxPayments;
+    private Set<Payment> payments;
 
     public Vehicle() {
     }
     public Boolean isVehicleTaxed()
     {
-        return this.getTaxPayments().stream().anyMatch(taxPayment -> taxPayment.getValidUntil().after(new java.util.Date()));
+        return this.getTaxPayments().stream().anyMatch(payment -> payment.getValidUntil().after(new java.util.Date()));
     }
 
     public Date getTaxedUntil()
     {
         // return the date corresponding to the latest value in the "validUntil" field of the TaxPayment objects
-        return this.getTaxPayments().stream().map(TaxPayment::getValidUntil).max(Date::compareTo).orElse(null);
+        return this.getTaxPayments().stream().map(Payment::getValidUntil).max(Date::compareTo).orElse(null);
     }
 
     public Integer getVehicleId() {
@@ -121,12 +121,12 @@ public class Vehicle implements java.io.Serializable{
         this.emissions = emissions;
     }
 
-    public Set<TaxPayment> getTaxPayments() {
-        return taxPayments;
+    public Set<Payment> getTaxPayments() {
+        return payments;
     }
 
-    public void setTaxPayments(Set<TaxPayment> taxPayments) {
-        this.taxPayments = taxPayments;
+    public void setTaxPayments(Set<Payment> payments) {
+        this.payments = payments;
     }
 
     public Double getListingPrice() {

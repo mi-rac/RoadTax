@@ -1,8 +1,11 @@
 package com.roadtax.views;
 
-import java.util.Date;
+import com.roadtax.entities.Payment;
 
-public class VehicleShortDTO
+import java.util.Date;
+import java.util.List;
+
+public class VehiclePaymentsDTO
 {
     private Integer vehicleId;
     private String make;
@@ -11,8 +14,18 @@ public class VehicleShortDTO
     private Boolean taxed;
     private Date taxedUntil;
 
-    public VehicleShortDTO()
+    private List<Payment> payments;
+
+    public VehiclePaymentsDTO()
     {
+    }
+
+    public List<Payment> getPayments() {
+        return payments;
+    }
+
+    public void setPayments(List<Payment> payments) {
+        this.payments = payments;
     }
 
     public Date getTaxedUntil() {

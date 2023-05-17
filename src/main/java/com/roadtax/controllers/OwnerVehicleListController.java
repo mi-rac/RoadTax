@@ -1,7 +1,7 @@
 package com.roadtax.controllers;
 
 import com.roadtax.views.OwnerVehicleListDTO;
-import com.roadtax.services.OwnerVehicleListService;
+import com.roadtax.services.OwnerVehicleListDTOService;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -17,18 +17,18 @@ import java.util.List;
 public class OwnerVehicleListController
 {
     @Autowired
-    private OwnerVehicleListService ownerVehicleListService;
+    private OwnerVehicleListDTOService ownerVehicleListDTOService;
 
     @GetMapping("/owner/vehicleList")
     public List<OwnerVehicleListDTO> getAllOwnerVehicleLists()
     {
-        return ownerVehicleListService.getAllOwnerVehicleListDTO();
+        return ownerVehicleListDTOService.getAllOwnerVehicleListDTO();
     }
 
     @GetMapping("/owner/vehicleList/{id}")
     public OwnerVehicleListDTO getOwnerVehicleListByID(@PathVariable("id") Integer id)
     {
-        OwnerVehicleListDTO ownerVehicleList = ownerVehicleListService.getOwnerVehicleListDTOById(id);
+        OwnerVehicleListDTO ownerVehicleList = ownerVehicleListDTOService.getOwnerVehicleListDTOById(id);
 
         if(ownerVehicleList != null) {
             return ownerVehicleList;

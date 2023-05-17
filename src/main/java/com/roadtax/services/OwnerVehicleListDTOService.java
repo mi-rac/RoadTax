@@ -3,7 +3,7 @@ package com.roadtax.services;
 import com.roadtax.entities.Owner;
 import com.roadtax.views.OwnerVehicleListDTO;
 import com.roadtax.controllers.OwnerRepository;
-import com.roadtax.views.VehicleShortDTO;
+import com.roadtax.views.VehiclePaymentsDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,13 +12,13 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
-public class OwnerVehicleListService
+public class OwnerVehicleListDTOService
 {
     @Autowired
     private OwnerRepository owners;
 
     @Autowired
-    private VehicleShortService vehicleShort;
+    private VehiclePaymentsDTOService vehicleShort;
 
     public OwnerVehicleListDTO convertToOwnerVehicleDTO(Owner owner)
     {
@@ -41,7 +41,7 @@ public class OwnerVehicleListService
         return owner.map(this::convertToOwnerVehicleDTO).orElse(null);
     }
 
-    public List<VehicleShortDTO> getAllVehiclesBelongingTo(Owner owner)
+    public List<VehiclePaymentsDTO> getAllVehiclesBelongingTo(Owner owner)
     {
         return owner.getVehicles().stream().map(vehicleShort::convertToVehicleShortDTO).collect(Collectors.toList());
     }

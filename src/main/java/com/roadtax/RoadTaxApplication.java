@@ -1,7 +1,7 @@
 package com.roadtax;
 
-import com.roadtax.controllers.TaxPaymentRepository;
-import com.roadtax.services.TaxPaymentService;
+import com.roadtax.controllers.PaymentRepository;
+import com.roadtax.services.PaymentService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +16,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 public class RoadTaxApplication
 {
     @Autowired
-    TaxPaymentService taxService;
+    PaymentService taxService;
 
     private static final Logger log = LoggerFactory.getLogger(RoadTaxApplication.class);
     public static void main(String[] args) {
@@ -24,11 +24,8 @@ public class RoadTaxApplication
     }
 
     @Bean
-    public CommandLineRunner demo(TaxPaymentRepository repository) {
+    public CommandLineRunner demo(PaymentRepository repository) {
         return args -> {
-            String empty = "";
-            String line = "-------------------------------";
-
             repository.save(taxService.newPayment(1, 1, "2022-11-25", "paid"));
             repository.save(taxService.newPayment(1, 1, "2021-11-25", "paid"));
         };

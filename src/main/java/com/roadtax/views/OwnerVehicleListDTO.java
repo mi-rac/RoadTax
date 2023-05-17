@@ -8,7 +8,7 @@ public class OwnerVehicleListDTO
     private String firstName;
     private String lastName;
     private String email;
-    private List<VehicleShortDTO> vehicles;
+    private List<VehiclePaymentsDTO> vehicles;
 
     public OwnerVehicleListDTO() {
     }
@@ -45,11 +45,11 @@ public class OwnerVehicleListDTO
         this.email = email;
     }
 
-    public List<VehicleShortDTO> getVehicles() {
+    public List<VehiclePaymentsDTO> getVehicles() {
         return vehicles;
     }
 
-    public void setVehicles(List<VehicleShortDTO> vehicles) {
+    public void setVehicles(List<VehiclePaymentsDTO> vehicles) {
         this.vehicles = vehicles;
     }
 

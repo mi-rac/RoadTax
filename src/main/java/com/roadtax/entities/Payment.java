@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-public class TaxPayment implements java.io.Serializable{
+public class Payment implements java.io.Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,7 +26,7 @@ public class TaxPayment implements java.io.Serializable{
 
     private String paymentStatus;
 
-    public TaxPayment() {
+    public Payment() {
     }
 
     public TaxRate getTaxRate() {
