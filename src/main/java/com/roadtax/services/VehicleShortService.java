@@ -2,8 +2,8 @@ package com.roadtax.services;
 
 import com.roadtax.entities.Owner;
 import com.roadtax.entities.Vehicle;
-import com.roadtax.entities.VehicleShortDTO;
-import com.roadtax.repositories.VehicleRepository;
+import com.roadtax.views.VehicleShortDTO;
+import com.roadtax.controllers.VehicleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

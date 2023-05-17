@@ -1,6 +1,6 @@
-package com.roadtax.repositories;
+package com.roadtax.controllers;
 
-import com.roadtax.entities.OwnerVehicleListDTO;
+import com.roadtax.views.OwnerVehicleListDTO;
 import com.roadtax.services.OwnerVehicleListService;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +14,7 @@ import java.util.List;
 
 @RestController
 @Api(tags = "DTO")
-public class OwnerVehicleListRepository
+public class OwnerVehicleListController
 {
     @Autowired
     private OwnerVehicleListService ownerVehicleListService;

@@ -1,4 +1,4 @@
-package com.roadtax.repositories;
+package com.roadtax.controllers;
 
 import com.roadtax.entities.EmissionBand;
 import org.springframework.data.jpa.repository.JpaRepository;

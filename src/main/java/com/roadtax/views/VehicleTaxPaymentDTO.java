@@ -1,4 +1,6 @@
-package com.roadtax.entities;
+package com.roadtax.views;
+
+import com.roadtax.entities.TaxPayment;
 
 import java.util.List;
 

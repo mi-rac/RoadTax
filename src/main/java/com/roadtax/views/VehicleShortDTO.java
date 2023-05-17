@@ -1,4 +1,4 @@
-package com.roadtax.entities;
+package com.roadtax.views;
 
 public class VehicleShortDTO
 {
@@ -6,9 +6,18 @@ public class VehicleShortDTO
     private String make;
     private String model;
     private String licensePlate;
+    private Boolean taxed;
 
     public VehicleShortDTO()
     {
+    }
+
+    public Boolean getTaxed() {
+        return taxed;
+    }
+
+    public void setTaxed(Boolean taxed) {
+        this.taxed = taxed;
     }
 
     public Integer getVehicleId()
